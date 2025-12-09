@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>People on Sunday</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react-leaflet": "https://aistudiocdn.com/react-leaflet@^5.0.0",
+    "leaflet/": "https://aistudiocdn.com/leaflet@^1.9.4/",
+    "leaflet": "https://aistudiocdn.com/leaflet@^1.9.4",
+    "vite": "https://aistudiocdn.com/vite@^7.2.7",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+<style>
+  /* Blue/White Technical Poster Aesthetic */
+  :root {
+    --poster-blue: #0033cc;
+    --poster-light-blue: #e0e6ff;
+    --poster-white: #ffffff;
+  }
+
+  body {
+    background-color: var(--poster-white);
+    color: var(--poster-blue);
+    font-family: 'Courier New', Courier, monospace; /* System Monospace */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Remove default rounded corners from inputs for brutalist look */
+  input, select, button, textarea {
+    border-radius: 0 !important;
+    outline: none;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--poster-blue);
+  }
+  
+  ::selection {
+    background: var(--poster-blue);
+    color: var(--poster-white);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--poster-white); 
+    border-left: 1px solid var(--poster-blue);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--poster-blue); 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #002299; 
+  }
+  
+  /* Leaflet overrides for Blue Theme */
+  .leaflet-container {
+    background: white !important;
+    font-family: 'Courier New', Courier, monospace !important;
+  }
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background: white;
+    color: var(--poster-blue);
+    border: 1px solid var(--poster-blue);
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .leaflet-bar a {
+    background-color: white;
+    color: var(--poster-blue);
+    border-color: var(--poster-blue);
+    border-radius: 0 !important;
+  }
+  .leaflet-bar a:hover {
+    background-color: var(--poster-blue);
+    color: white;
+  }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
